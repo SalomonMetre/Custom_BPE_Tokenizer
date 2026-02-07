@@ -1,7 +1,3 @@
-Here is your updated README with the Streamlit link integrated at the top for maximum visibility. I have also slightly polished the layout to ensure it looks professional for your thesis repository.
-
----
-
 # 🧩 Language-Agnostic BPE Pipeline & Fertility Analysis
 
 A robust, language-independent **Byte Pair Encoding (BPE)** implementation designed to optimize subword segmentation for any natural language. While the framework is universal, this repository focuses on the **[Mashi language](https://en.wikipedia.org/wiki/Shi_language)** as a primary case study to demonstrate how specialized training can reduce the "tokenization tax" in low-resource Bantu contexts.
