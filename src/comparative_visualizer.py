@@ -72,7 +72,7 @@ def main():
         st.sidebar.error(f"Error: {e}")
         return
 
-    user_input = st.text_area("Input Text (in Mashi):", "moyo wa bantu banso bidi bimpe.", height=100)
+    user_input = st.text_area("Input Text (in Mashi):", "Ci bôhe barhumvagya ako kanwa, banarhînya okumudôsa.", height=100)
 
     if user_input:
         word_count = len(user_input.split()) or 1
