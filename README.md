@@ -1,6 +1,6 @@
 # 🧩 Mashi BPE Tokenizer
 
-A custom **Byte Pair Encoding (BPE)** implementation specifically designed for the [Mashi language] (https://en.wikipedia.org/wiki/Shi_language). This project aims to reduce the "tokenization tax" paid by low-resource languages by learning subword units that align with the language's actual morphology.
+A custom **Byte Pair Encoding (BPE)** implementation specifically designed for the [**Mashi language**](https://en.wikipedia.org/wiki/Shi_language). This project aims to reduce the "tokenization tax" paid by low-resource languages by learning subword units that align with the language's actual morphology.
 
 ## 🚀 Key Features
 
