@@ -1,39 +1,38 @@
-# 🧩 Mashi BPE Tokenizer
+# 🧩 Language-Agnostic BPE Pipeline & Fertility Analysis
 
-A custom **Byte Pair Encoding (BPE)** implementation specifically designed for the [**Mashi language**](https://en.wikipedia.org/wiki/Shi_language). This project aims to reduce the "tokenization tax" paid by low-resource languages by learning subword units that align with the language's actual morphology.
+A robust, language-independent **Byte Pair Encoding (BPE)** implementation designed to optimize subword segmentation for any natural language. While the framework is universal, this repository focuses on the **[Mashi language](https://en.wikipedia.org/wiki/Shi_language)** as a primary case study to demonstrate how specialized training can reduce the "tokenization tax" in low-resource Bantu contexts.
 
 ## 🚀 Key Features
 
-* **Custom BPE Trainer:** Optimized for unique chunk counting to speed up training on large corpora.
-* **Fertility Analysis:** Built-in metrics to compare how many tokens are produced per word compared to industry giants.
-* **Comparative Visualizer:** A Streamlit-based web interface to see side-by-side tokenization results against **GPT-4o** and **Llama 3**.
-* **Strict Boundary Logic:** Respects whitespace and escape sequences to ensure clean morphological learning.
+* **Universal BPE Trainer:** A language-agnostic pipeline optimized with unique chunk counting to handle any UTF-8 text corpus efficiently.
+* **Fertility Analysis Framework:** Built-in metrics to calculate **Fertility** (tokens per word), providing a standardized way to measure tokenization efficiency across different models.
+* **Cross-Model Comparison:** A Streamlit-based interface for side-by-side visualization of your custom results against industry standards like **GPT-4o** and **Llama 3**.
+* **Morphological Preservation:** Employs strict boundary logic to ensure subword units respect linguistic structures better than "one-size-fits-all" multilingual models.
 
 ## 📁 Project Structure
 
 ```text
 .
-├── data/                       # Raw text corpora (Mashi/French)
+├── data/                       # Text corpora (Mashi case study included)
 ├── src/
-│   ├── TokenizerTrainer.py    # Training logic & optimization
+│   ├── TokenizerTrainer.py    # Language-agnostic training logic
 │   ├── Tokenizer.py           # Core encoding/decoding engine
 │   ├── train_tokenizer.py     # Entry point for training
-│   ├── test_tokenizer.py      # Basic CLI testing
 │   ├── compare_tokenizers.py  # Script for cross-model metrics
-│   ├── comparative_visualizer.py # Streamlit UI for fertility analysis
-│   └── tokenizer_files/       # Exported vocab.txt and merges.txt
+│   ├── comparative_visualizer.py # Web UI for fertility analysis
+│   └── tokenizer_files/       # Exported vocab and merges
 └── pyproject.toml             # UV environment configuration
 
 ```
 
 ## 🛠️ Installation
 
-This project uses `uv` for extremely fast and reproducible Python environments.
+This project uses `uv` for fast, reproducible Python environments.
 
 1. **Clone the repository:**
 ```bash
-git clone https://github.com/SalomonMetre/Mashi_BPE_Tokenizer.git
-cd Mashi_BPE_Tokenizer.git
+git clone https://github.com/SalomonMetre/Custom_BPE_Tokenizer.git
+cd Custom_BPE_Tokenizer
 
 ```
 
@@ -50,7 +49,7 @@ uv sync
 
 ### 1. Training the Tokenizer
 
-Place your corpus in `data/` and run the trainer. This will produce `vocab.txt` and `merges.txt` in the `tokenizer_files/` directory.
+The trainer accepts any UTF-8 text file. Simply point it to your corpus in `data/` and run:
 
 ```bash
 uv run src/train_tokenizer.py
@@ -59,7 +58,7 @@ uv run src/train_tokenizer.py
 
 ### 2. Running Comparative Analysis
 
-To see how your custom tokenizer stacks up against GPT-4o and Llama 3 in the terminal:
+Evaluate the efficiency of your custom-trained model against **GPT-4o** and **Llama 3** on any test set:
 
 ```bash
 uv run src/compare_tokenizers.py
@@ -68,7 +67,7 @@ uv run src/compare_tokenizers.py
 
 ### 3. Web Visualization (Streamlit)
 
-Launch the interactive dashboard to visualize **Fertility Rates** and subword segmentation with high-contrast color mapping.
+Visualize subword segmentation with high-contrast color mapping and real-time **Fertility Rate** calculations:
 
 ```bash
 uv run streamlit run src/comparative_visualizer.py
@@ -77,4 +76,4 @@ uv run streamlit run src/comparative_visualizer.py
 
 ## 📊 Evaluation Metrics: Fertility
 
-The primary metric of this project is **Fertility**.
+The primary metric used to evaluate model performance is **Fertility**.
