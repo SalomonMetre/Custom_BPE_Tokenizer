@@ -1,3 +1,7 @@
+import sys
+import os
+sys.path.append(os.path.join(os.getcwd()))
+
 import streamlit as st
 from Tokenizer import Tokenizer as MyTokenizer
 import random
