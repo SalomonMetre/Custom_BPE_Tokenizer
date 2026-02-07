@@ -61,8 +61,8 @@ def main():
     st.markdown("Comparing **Mashi BPE** tokenizer against LLMs' tokenizers")
 
     st.sidebar.header("Custom Model Settings")
-    vocab_file = st.sidebar.text_input("Vocab File", "tokenizer_files/vocab.txt")
-    merges_file = st.sidebar.text_input("Merges File", "tokenizer_files/merges.txt")
+    vocab_file = st.sidebar.text_input("Vocab File", "src/tokenizer_files/vocab.txt")
+    merges_file = st.sidebar.text_input("Merges File", "src/tokenizer_files/merges.txt")
 
     try:
         my_tokenizer = load_custom_tokenizer(vocab_file, merges_file)
